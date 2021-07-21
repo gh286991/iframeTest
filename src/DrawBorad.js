@@ -1,6 +1,7 @@
 import "tui-image-editor/dist/tui-image-editor.css";
 import ImageEditor from "@toast-ui/react-image-editor";
 import React, { useRef } from "react";
+import { useParams } from 'react-router-dom';
 
 const myTheme = {
   // Theme object to extends default dark theme.
@@ -8,6 +9,9 @@ const myTheme = {
 
 const MyComponent = () => {
   const editorRef = useRef(null);
+  const { userName } = useParams();
+
+  console.log('userName' , userName)
 
   const handleClickButton = () => {
     const editorInstance = editorRef.current.getInstance();
