@@ -14,16 +14,8 @@ export default function App() {
     <div className="App">
  
       {/* {console.log('name' , name)} */}
-      {/* <DrawBorad /> */}
-      <Router>
-                <Switch>  
-                      <Route exact path='/user/:userName' component={DrawBorad} /> 
-        
-                    <Route>
-                        <div>Default page</div>
-                    </Route>
-                </Switch>
-            </Router>
+      <DrawBorad />
+
     </div>
   );
 }

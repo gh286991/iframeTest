@@ -9,9 +9,10 @@ const myTheme = {
 
 const MyComponent = () => {
   const editorRef = useRef(null);
-  const { userName } = useParams();
 
-  console.log('userName' , userName)
+  console.log('window', window.location.href)
+  const token = window.location.href.split('?')[1]
+  console.log('token' , token)
 
   const handleClickButton = () => {
     const editorInstance = editorRef.current.getInstance();
@@ -31,6 +32,8 @@ const MyComponent = () => {
   return (
     <>
       <button onClick={handleClickButton}>Flip image by X Axis!</button>
+      <div>{token}</div>
+      
       <ImageEditor
         ref={editorRef}
         includeUI={{
